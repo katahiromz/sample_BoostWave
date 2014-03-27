@@ -48,6 +48,7 @@ int main(int argc, char* argv[])
             wave::support_option_variadics));   // 可変長引数マクロサポート
 
     // コンパイルオプション設定
+    // Visual Studio 2013 がインストールされていることを想定している
     ctx.add_macro_definition("_WIN32");
     ctx.add_macro_definition("_MSC_VER=1800");
     ctx.add_sysinclude_path(
