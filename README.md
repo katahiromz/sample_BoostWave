@@ -15,7 +15,10 @@ http://www.ruche-home.net/program/boost/wave
 Visual Studio でのビルド手順
 ----------
 
-最新の cmake をインストールしてパスを通しておく必要があります。
+当然ながら、 boost をインストールしてインクルードパスとライブラリパスを通しておく必要があります。  
+boost::wave のサンプルなので、 boost のビルドが必要です。
+
+また、最新の cmake をインストールして cmake.exe へのパスを通しておく必要があります。
 
 cmake  
 http://www.cmake.org/
