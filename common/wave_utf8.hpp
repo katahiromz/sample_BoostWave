@@ -55,9 +55,11 @@ namespace wave_utf8
                 const PositionT& pos,
                 boost::wave::language_support language)
             {
-                typedef typename IterContextT::iterator_type iterator_type;
-
-                if (!readFileToUtf8(iterContext.filename.c_str(), iterContext.code))
+                try
+                {
+                    iterContext.code = readFileToUtf8(iterContext.filename.c_str());
+                }
+                catch (const std::exception&)
                 {
                     BOOST_WAVE_THROW_CTX(
                         iterContext.ctx,
@@ -68,6 +70,7 @@ namespace wave_utf8
                     return;
                 }
 
+                typedef typename IterContextT::iterator_type iterator_type;
                 iterContext.first =
                     iterator_type(
                         iterContext.code.begin(),
